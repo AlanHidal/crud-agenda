@@ -34,8 +34,8 @@ export class ApiService {
     this.ContactList.splice(IDlist, 1);
     this.SaveLocal();
   }
-  RemovePhone(IDlist): void{
-    this.ContactList[IDlist].telefono.splice(IDlist, 1);
+  RemovePhone(IDlist:number,id:number): void{
+    this.ContactList[IDlist].telefono.splice(id, 1);
     this.SaveLocal();
   }
   GetListContact(): contacto[]{
@@ -43,6 +43,17 @@ export class ApiService {
   }
   GetListPhone(IDlist): Array <telefono> {
     return this.ContactList[IDlist].telefono ;
+  }
+  EditContact(IDlist: number,newname: string,newapellidos: string){
+    this.ContactList[IDlist].nombre = newname;
+    this.ContactList[IDlist].apellido = newapellidos;
+    this.SaveLocal();
+  }
+  EditPhone(IDlist: number,id: number, newPhone: number){
+    console.log("lista",IDlist)
+    console.log("tlefono id",id)
+    this.ContactList[IDlist].telefono[id].tel = newPhone;
+    this.SaveLocal();
   }
   SaveLocal(): void{
     localStorage.setItem('Contact', JSON.stringify(this.ContactList));
