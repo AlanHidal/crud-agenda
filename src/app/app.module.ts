@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componetes/home/home.component';
 import { TelefonoComponent } from './componetes/telefono/telefono.component';
 import { HeaderComponent } from './componetes/mix/header/header.component';
+import { ModalAddContactComponent } from './componetes/modal/contact-form/modal-add-contact/modal-add-contact.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalEditphoneComponent } from './componetes/modal/contact-form/modal-editphone/modal-editphone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TelefonoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalAddContactComponent,
+    ModalEditphoneComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
