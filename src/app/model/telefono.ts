@@ -1,6 +1,6 @@
 export class telefono {
     tel: {};
-    constructor (telefono:number){
+    constructor( telefono: number){
         this.tel = this.tel;
     }
 }
