@@ -44,4 +44,10 @@ export class ModalAddContactComponent  {
    edit(){
      this.api.EditContact(this.index,this.form.get('nombre').value,this.form.get('apellido').value);
    };
+   blocknum(num){
+      return (num >= 97 && num <= 122 || num >=65 && num <=90 || num === 32);
+      // 65 90
+      // 97 122
+   }
+
 }

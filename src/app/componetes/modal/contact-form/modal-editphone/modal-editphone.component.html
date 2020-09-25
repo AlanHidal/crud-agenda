@@ -24,7 +24,7 @@
                 <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class=" form-group ">
                         <label for="add-contact-name ">Telefono</label>
-                        <input type="text " class="form-control " id="add-contact-name " [class.is-invalid]="IsinvalidTelefono " formControlName="telefono">
+                        <input type="text " class="form-control " id="add-contact-name " (keypress)="blockletter(this.$event.charCode)" [class.is-invalid]="IsinvalidTelefono " formControlName="telefono">
                         <small class="form-text text-muted " *ngIf="IsinvalidTelefono ">El nombre debe contener al menos 10 numeros</small>
                     </div>
 

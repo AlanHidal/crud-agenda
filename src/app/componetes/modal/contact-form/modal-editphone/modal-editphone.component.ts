@@ -46,5 +46,8 @@ export class ModalEditphoneComponent {
      edit(){
         this.api.EditPhone(this.listcontactid,this.indexPhone,this.form.get("telefono").value)
     };
+    blockletter(char){
+      return (char >= 48 && char <= 57);
+    }
 
 }
