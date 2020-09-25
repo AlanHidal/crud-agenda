@@ -9,7 +9,6 @@ const routes: Routes = [
 { path: 'telefonos', component:TelefonoComponent},
 { path: '', pathMatch: 'full', redirectTo: 'home' },
 { path: '**', pathMatch: 'full', redirectTo: 'home' }
-
 ];
 
 @NgModule({
