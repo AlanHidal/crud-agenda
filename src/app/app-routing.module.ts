@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 { path: 'home', component:HomeComponent},
-{ path: 'telefonos', component:TelefonoComponent},
+{ path: 'telefonos/:id', component:TelefonoComponent},
 { path: '', pathMatch: 'full', redirectTo: 'home' },
 { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
