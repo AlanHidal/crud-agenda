@@ -6,7 +6,7 @@ export class contacto{
     telefono: telefono []
     constructor(nombre: string , apellido: string){
         this.apellido = nombre;
-        this.nombre = nombre;
+        this.nombre = apellido;
         this.telefono = [];
     }
 
