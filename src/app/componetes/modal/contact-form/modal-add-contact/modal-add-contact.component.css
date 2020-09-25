@@ -1,0 +1,13 @@
+.circular-button {
+    border-radius: 100% !important;
+    -webkit-border-radius: 100% !important;
+    -moz-border-radius: 100% !important;
+    -ms-border-radius: 100% !important;
+    -o-border-radius: 100% !important;
+    width: 75px !important;
+    height: 75px !important;
+    text-align: center !important;
+    position: fixed;
+    bottom: 10em !important;
+    right: 3em !important;
+}
