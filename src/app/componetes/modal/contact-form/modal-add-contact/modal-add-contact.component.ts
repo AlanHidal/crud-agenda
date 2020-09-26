@@ -1,6 +1,7 @@
 import { ApiService } from './../../../../servicio/api.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, Form } from '@angular/forms';
+
 
 @Component({
   selector: 'app-modal-add-contact',
@@ -13,7 +14,9 @@ export class ModalAddContactComponent  {
  @Input() IsEdit = false;
  @Input() index: number;
  @Input() name: string;
-
+ @ViewChild('close') modalbutto;
+ 
+  
   constructor(private fb:FormBuilder, private api:ApiService) { 
     this.cargarFormulario();
   }
@@ -38,12 +41,14 @@ export class ModalAddContactComponent  {
         this.form.markAllAsTouched();
       }else{
            this.api.CreateNewContact(this.form.get('nombre').value,this.form.get('apellido').value);
+           this.modalbutto.nativeElement.click();
       }
     }
     }
    edit(){
      this.api.EditContact(this.index,this.form.get('nombre').value,this.form.get('apellido').value);
-   };
+     this.modalbutto.nativeElement.click();
+  }
    blocknum(num){
       return (num >= 97 && num <= 122 || num >=65 && num <=90 || num === 32);
       // 65 90
