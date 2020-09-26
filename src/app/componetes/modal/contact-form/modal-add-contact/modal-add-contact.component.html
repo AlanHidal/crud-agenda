@@ -33,7 +33,7 @@
                         <small class="form-text text-muted " *ngIf="IsinvalidApellido ">El apellido debe contener al menos 3 caracteres</small>
                     </div>
                     <div class="modal-footer ">
-                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary " data-dismiss="modal" #close id="close">Close</button>
                         <button type="submit " class="btn btn-primary " *ngIf="IsEdit">Guadar cambios</button>
                         <button type="submit " class="btn btn-primary " *ngIf="!IsEdit">guardar</button>
                     </div>

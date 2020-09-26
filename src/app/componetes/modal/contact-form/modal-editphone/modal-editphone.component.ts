@@ -2,7 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { telefono } from './../../../../model/telefono';
 
 import { ApiService } from './../../../../servicio/api.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, Form } from '@angular/forms';
 
 @Component({
@@ -16,8 +16,9 @@ export class ModalEditphoneComponent {
   @Input() IsEdit = false;
   @Input() indexPhone: number ;
   @Input() name: string;
-  listcontactid: number;
- 
+  @ViewChild('close') modalbutto;
+
+  listcontactid: number; 
    constructor(private fb:FormBuilder, private api:ApiService, private route:ActivatedRoute) { 
      this.route.params.subscribe((data)=>{
        this.listcontactid = data.id;
@@ -40,11 +41,13 @@ export class ModalEditphoneComponent {
          this.form.markAllAsTouched();
        }else{
             this.api.AddNewPhone(this.listcontactid, this.form.get("telefono").value);
+            this.modalbutto.nativeElement.click();
        }
      }
      }
      edit(){
         this.api.EditPhone(this.listcontactid,this.indexPhone,this.form.get("telefono").value)
+        this.modalbutto.nativeElement.click();
     };
     blockletter(char){
       return (char >= 48 && char <= 57);
